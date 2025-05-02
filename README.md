@@ -39,10 +39,10 @@ http://localhost
 ## Manual Installation
 Prerequisites
 
-Python 3.9+
-Node.js 14+
-PostgreSQL 13+ with PostGIS
-Docker and Docker Compose
+- Python 3.9+
+- Node.js 14+
+- PostgreSQL 13+ with PostGIS
+ -Docker and Docker Compose
 
 Step-by-Step Installation
 
