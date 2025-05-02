@@ -49,12 +49,8 @@ Step-by-Step Installation
 1. Set up the database:
 ```bash
 sudo -u postgres psql
-```
-```bash
 CREATE USER fiber_user WITH PASSWORD 'secure_password';
 CREATE DATABASE fiber_planning;
-```
-```bash
 ALTER DATABASE fiber_planning OWNER TO fiber_user;
 ````
 ```bash
@@ -65,8 +61,6 @@ CREATE EXTENSION postgis;
 ```bash
 cd backend
 python -m venv venv
-````
-```bash
 source venv/bin/activate
 pip install -r requirements.txt
 ```
@@ -78,22 +72,27 @@ npm install
 4. Start the application:
 ```bash
 docker-compose up --build
+````
 Configuration
 Environment Variables
 Backend (.env)
-CopyFLASK_APP=app
+```bash
+FLASK_APP=app
 FLASK_ENV=production
 DATABASE_URL=postgresql://fiber_user:secure_password@localhost/fiber_planning
 SECRET_KEY=your-secret-key
+````
 Frontend (.env)
-CopyREACT_APP_API_URL=http://localhost:5000
+```bash
+REACT_APP_API_URL=http://localhost:5000
+````
 Duct Types Configuration
 Default duct types are installed automatically. To add custom duct types:
 
-Access the API endpoint: POST /api/duct-types
-Provide JSON data:
-
-jsonCopy{
+1. Access the API endpoint: POST /api/duct-types
+2. Provide JSON data:
+```bash
+{
     "name": "Custom HDPE 50mm",
     "diameter": 50.0,
     "material": "HDPE",
@@ -102,8 +101,7 @@ jsonCopy{
     "cost_per_meter": 6.5,
     "description": "Custom duct configuration"
 }
-
-
+````
 
 
   
