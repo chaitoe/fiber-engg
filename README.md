@@ -26,11 +26,30 @@ An open-source web-based tool for planning and managing fiber optic duct infrast
 git clone https://github.com/yourusername/fiber-duct-planner.git
 cd fiber-duct-planner
 ````
-###  Run the installation script:
+2. Run the installation script:
 ```bash
 sudo chmod +x install.sh
 sudo ./install.sh
 ```
+Access the application at:
+```bash
+http://localhost
+```
+
+## Manual Installation
+Prerequisites
+
+Python 3.9+
+Node.js 14+
+PostgreSQL 13+ with PostGIS
+Docker and Docker Compose
+
+Step-by-Step Installation
+
+Set up the database:
+
+
+
 
 
   
