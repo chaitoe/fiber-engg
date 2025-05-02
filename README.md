@@ -171,13 +171,13 @@ pytest==7.4.3
 black==23.12.1
 flake8==6.1.0
 EOF
+```
 ```bash
 # Install Python packages
 pip install --upgrade pip
 pip install -r requirements.txt
 ````
 ```bash
-
 # Create environment file
 cat > .env << EOF
 FLASK_APP=app
