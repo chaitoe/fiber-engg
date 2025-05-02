@@ -132,7 +132,80 @@ Key Endpoints:
 
 ### Development
 1. Setup Development Environment:
+```bash
+# Backend
+cd backend
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+flask run
+
+# Frontend
+cd frontend
+npm install
+npm start
+````
+2. Running Tests:
+```bash
+# Backend tests
+pytest
+
+# Frontend tests
+npm test
+```
+Contributing
+
+Fork the repository
+Create a feature branch
+Commit your changes
+Push to the branch
+Create a Pull Request
+
+Security Considerations
+
+Change default passwords
+Configure proper firewall rules
+Use HTTPS in production
+Implement proper authentication
+Regular security updates
+
+Troubleshooting
+Common Issues
+
+Database Connection Issues:
+
+Check PostgreSQL service status
+Verify database credentials
+Ensure PostGIS extension is installed
+
+
+Map Display Issues:
+
+Check internet connection
+Verify API keys if using premium map services
+Clear browser cache
+
+
+Docker Issues:
+
+Check Docker service status
+Verify port availability
+Check Docker logs
 
 
 
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
+Support
+For support, please:
+
+Check the documentation
+Search existing issues
+Create a new issue if needed
+
+Acknowledgments
+
+OpenStreetMap for map data
+PostGIS team for GIS support
+Open source community
   
