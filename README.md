@@ -27,7 +27,10 @@ git clone https://github.com/yourusername/fiber-duct-planner.git
 cd fiber-duct-planner
 ````
 ###  Run the installation script:
-- sudo chmod +x install.sh
-- sudo ./install.sh
+```bash
+sudo chmod +x install.sh
+sudo ./install.sh
+```
+
 
   
