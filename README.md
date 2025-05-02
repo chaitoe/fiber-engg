@@ -435,31 +435,35 @@ sudo tail -f /var/log/nginx/error.log
 sudo tail -f /var/log/nginx/access.log
 
 # PostgreSQL logs
+```bash
 sudo tail -f /var/log/postgresql/postgresql-14-main.log
-9.2 Common Issues
-
+````
+Common Issues
 Database Connection Issues
-
-bashCopy# Check PostgreSQL status
+```bash
+# Check PostgreSQL status
 sudo systemctl status postgresql
-
+````
+```bash
 # Check database connection
 psql -h localhost -U fiber_user -d fiber_planning -c "\dt"
-
+````
+```bash
 # Verify PostGIS extension
 psql -h localhost -U fiber_user -d fiber_planning -c "SELECT PostGIS_version();"
-
+````
 Permission Issues
-
-bashCopy# Fix permissions
+```bash
+# Fix permissions
 sudo chown -R $USER:$USER /opt/fiber-duct-planner
 sudo chmod -R 755 /opt/fiber-duct-planner
-
+````
 Port Conflicts
-
-bashCopy# Check port usage
+```bash
+# Check port usage
 sudo netstat -tulpn | grep -E ':80|:5000'
-10. Security Recommendations
+````
+### Security Recommendations
 
 Configure SSL/TLS certificates
 Set up proper firewall rules
@@ -468,7 +472,7 @@ Implement proper authentication
 Regular database backups
 Monitor system resources
 
-11. Performance Optimization
+### Performance Optimization
 
 Configure PostgreSQL for better performance
 Set up caching
