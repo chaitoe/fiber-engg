@@ -97,7 +97,7 @@ To add custom duct types:
 }
 ````
 ## Usage
-1### Planning a New Duct:
+### Planning a New Duct:
 - Click "New Duct" on the map interface
 - Draw the duct path
 - Configure duct properties
