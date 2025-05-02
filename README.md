@@ -47,8 +47,10 @@ http://localhost
 ```bash
 sudo apt update
 sudo apt upgrade -y
+````
 1.2 Install System Dependencies
-bashCopysudo apt install -y \
+```bash
+sudo apt install -y \
     build-essential \
     python3.11 \
     python3.11-dev \
@@ -64,15 +66,18 @@ bashCopysudo apt install -y \
     git \
     curl \
     software-properties-common
+```
 1.3 Install Node.js (v20.x LTS)
-bashCopycurl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+```bash
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
 sudo apt install -y nodejs
-
 # Verify installations
 node --version  # Should show v20.x.x
 npm --version   # Should show 10.x.x
+````
 1.4 Install Docker and Docker Compose
-bashCopy# Install Docker
+```bash
+# Install Docker
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
 
@@ -90,9 +95,11 @@ docker-compose --version
 # Start and enable Docker service
 sudo systemctl start docker
 sudo systemctl enable docker
+````
 2. Database Setup
 2.1 Configure PostgreSQL
-bashCopy# Start PostgreSQL service
+```bash
+# Start PostgreSQL service
 sudo systemctl start postgresql
 sudo systemctl enable postgresql
 
@@ -111,8 +118,10 @@ EOF
 
 # Verify PostGIS installation
 sudo -u postgres psql -d fiber_planning -c "SELECT PostGIS_version();"
+````
 2.2 Configure PostgreSQL Access
-bashCopy# Edit pg_hba.conf
+```bash
+# Edit pg_hba.conf
 sudo nano /etc/postgresql/14/main/pg_hba.conf
 
 # Add these lines (adjust according to your security needs)
@@ -122,24 +131,24 @@ host    fiber_planning    fiber_user    0.0.0.0/0       md5
 
 # Restart PostgreSQL
 sudo systemctl restart postgresql
+```
 3. Application Setup
 3.1 Clone Repository
-bashCopy# Create application directory
+```bash
+# Create application directory
 sudo mkdir -p /opt/fiber-duct-planner
 sudo chown $USER:$USER /opt/fiber-duct-planner
 
 # Clone repository
 git clone https://github.com/yourusername/fiber-duct-planner.git /opt/fiber-duct-planner
 cd /opt/fiber-duct-planner
+```
 3.2 Backend Setup
-bashCopy# Create and activate virtual environment
+```bash
+# Create and activate virtual environment
 cd /opt/fiber-duct-planner/backend
 python3.11 -m venv venv
 source venv/bin/activate
-
-# Install Python packages
-pip install --upgrade pip
-pip install -r requirements.txt
 
 # Alternative requirements.txt with specific versions:
 cat > requirements.txt << EOF
@@ -159,6 +168,10 @@ pytest==7.4.3
 black==23.12.1
 flake8==6.1.0
 EOF
+
+# Install Python packages
+pip install --upgrade pip
+pip install -r requirements.txt
 
 # Create environment file
 cat > .env << EOF
