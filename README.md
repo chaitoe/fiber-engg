@@ -73,8 +73,7 @@ npm install
 ```bash
 docker-compose up --build
 ````
-Configuration
-Environment Variables
+5. Configuration Environment Variables
 Backend (.env)
 ```bash
 FLASK_APP=app
@@ -86,9 +85,8 @@ Frontend (.env)
 ```bash
 REACT_APP_API_URL=http://localhost:5000
 ````
-Duct Types Configuration
+6. Duct Types Configuration
 Default duct types are installed automatically. To add custom duct types:
-
 1. Access the API endpoint: POST /api/duct-types
 2. Provide JSON data:
 ```bash
