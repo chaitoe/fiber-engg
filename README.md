@@ -52,9 +52,11 @@ sudo -u postgres psql
 ```
 ```bash
 CREATE USER fiber_user WITH PASSWORD 'secure_password';
-CREATE DATABASE fiber_planning;```
+CREATE DATABASE fiber_planning;
+```
 ```bash
-ALTER DATABASE fiber_planning OWNER TO fiber_user;````
+ALTER DATABASE fiber_planning OWNER TO fiber_user;
+````
 ```bash
 \c fiber_planning
 CREATE EXTENSION postgis;
@@ -63,6 +65,8 @@ CREATE EXTENSION postgis;
 ```bash
 cd backend
 python -m venv venv
+````
+```bash
 source venv/bin/activate
 pip install -r requirements.txt
 ```
