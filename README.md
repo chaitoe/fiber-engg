@@ -86,9 +86,10 @@ SECRET_KEY=your-secret-key
 REACT_APP_API_URL=http://localhost:5000
 ````
 6. Duct Types Configuration
-Default duct types are installed automatically. To add custom duct types:
-1. Access the API endpoint: POST /api/duct-types
-2. Provide JSON data:
+Default duct types are installed automatically.
+To add custom duct types:
+- Access the API endpoint: POST /api/duct-types
+- Provide JSON data:
 ```bash
 {
     "name": "Custom HDPE 50mm",
