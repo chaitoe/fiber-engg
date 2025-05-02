@@ -87,6 +87,7 @@ REACT_APP_API_URL=http://localhost:5000
 ````
 6. Duct Types Configuration
 Default duct types are installed automatically.
+
 To add custom duct types:
 - Access the API endpoint: POST /api/duct-types
 - Provide JSON data:
