@@ -103,7 +103,6 @@ To add custom duct types:
 }
 ````
 ### Usage
-
 1. Planning a New Duct:
 - Click "New Duct" on the map interface
 - Draw the duct path
@@ -153,15 +152,14 @@ pytest
 # Frontend tests
 npm test
 ```
-Contributing
+### Contributing
 
-Fork the repository
-Create a feature branch
-Commit your changes
-Push to the branch
-Create a Pull Request
-
-Security Considerations
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
+### Security Considerations
 
 Change default passwords
 Configure proper firewall rules
