@@ -124,7 +124,7 @@ Key Endpoints:
 - POST /api/ducts/:id/cables - Install cable in duct
 
 ## Development
-Setup Development Environment:
+### Setup Development Environment:
 ```bash
 # Backend
 cd backend
@@ -180,10 +180,10 @@ Regular security updates
 This project is licensed under the MIT License - see the LICENSE file for details.
 ###Support
 For support, please:
-### Check the documentation
-### Search existing issues
-### Create a new issue if needed
-###Acknowledgments
+- Check the documentation
+- Search existing issues
+- Create a new issue if needed
+### Acknowledgments
 - OpenStreetMap for map data
 - PostGIS team for GIS support
 - Open source community
