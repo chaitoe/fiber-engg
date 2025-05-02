@@ -74,15 +74,14 @@ npm install
 docker-compose up --build
 ````
 5. Configuration Environment Variables
-
-Backend (.env)
+- Backend (.env)
 ```bash
 FLASK_APP=app
 FLASK_ENV=production
 DATABASE_URL=postgresql://fiber_user:secure_password@localhost/fiber_planning
 SECRET_KEY=your-secret-key
 ````
-Frontend (.env)
+- Frontend (.env)
 ```bash
 REACT_APP_API_URL=http://localhost:5000
 ````
