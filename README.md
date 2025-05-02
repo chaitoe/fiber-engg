@@ -142,7 +142,7 @@ sudo mkdir -p /opt/fiber-duct-planner
 sudo chown $USER:$USER /opt/fiber-duct-planner
 
 # Clone repository
-git clone https://github.com/yourusername/fiber-duct-planner.git /opt/fiber-duct-planner
+git clone https://github.com/chaitoe/fiber-duct-planner.git /opt/fiber-duct-planner
 cd /opt/fiber-duct-planner
 ```
 Backend Setup
