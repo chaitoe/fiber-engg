@@ -49,9 +49,11 @@ Step-by-Step Installation
 1. Set up the database:
 ```bash
 sudo -u postgres psql
+```
 CREATE USER fiber_user WITH PASSWORD 'secure_password';
 CREATE DATABASE fiber_planning;
-ALTER DATABASE fiber_planning OWNER TO fiber_user;
+ALTER DATABASE fiber_planning OWNER TO fiber_user;````
+```bash
 \c fiber_planning
 CREATE EXTENSION postgis;
 ```
