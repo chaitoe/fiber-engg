@@ -74,6 +74,7 @@ npm install
 docker-compose up --build
 ````
 5. Configuration Environment Variables
+
 Backend (.env)
 ```bash
 FLASK_APP=app
