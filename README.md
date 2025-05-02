@@ -85,7 +85,7 @@ SECRET_KEY=your-secret-key
 ```bash
 REACT_APP_API_URL=http://localhost:5000
 ````
-Duct Types Configuration
+### Duct Types Configuration
 Default duct types are installed automatically.
 
 To add custom duct types:
@@ -102,6 +102,37 @@ To add custom duct types:
     "description": "Custom duct configuration"
 }
 ````
+### Usage
+
+1. Planning a New Duct:
+- Click "New Duct" on the map interface
+- Draw the duct path
+- Configure duct properties
+- Save the configuration
+2. Managing Ducts:
+- View existing ducts on the map
+- Click on ducts to view details
+- Edit properties as needed
+- Track capacity and usage
+3. Installing Cables:
+- Select a duct
+- Add cable installation details
+- Track capacity usage
+- Document installation dates
+
+### API Documentation
+The API documentation is available at http://localhost:5000/api/docs
+Key Endpoints:
+- GET /api/ducts - List all ducts
+- POST /api/ducts - Create new duct
+- GET /api/duct-types - List duct types
+- POST /api/duct-types - Create duct type
+- GET /api/cables - List installed cables
+- POST /api/ducts/:id/cables - Install cable in duct
+
+###Development
+1. Setup Development Environment:
+
 
 
   
