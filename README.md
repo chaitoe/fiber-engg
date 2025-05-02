@@ -71,6 +71,7 @@ Install Node.js (v20.x LTS)
 ```bash
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
 sudo apt install -y nodejs
+
 # Verify installations
 node --version  # Should show v20.x.x
 npm --version   # Should show 10.x.x
@@ -98,7 +99,7 @@ sudo systemctl enable docker
 ````
 ### Database Setup
 
-2.1 Configure PostgreSQL
+Configure PostgreSQL
 ```bash
 # Start PostgreSQL service
 sudo systemctl start postgresql
@@ -120,7 +121,7 @@ EOF
 # Verify PostGIS installation
 sudo -u postgres psql -d fiber_planning -c "SELECT PostGIS_version();"
 ````
-2.2 Configure PostgreSQL Access
+Configure PostgreSQL Access
 ```bash
 # Edit pg_hba.conf
 sudo nano /etc/postgresql/14/main/pg_hba.conf
@@ -133,8 +134,8 @@ host    fiber_planning    fiber_user    0.0.0.0/0       md5
 # Restart PostgreSQL
 sudo systemctl restart postgresql
 ```
-3. Application Setup
-3.1 Clone Repository
+### Application Setup
+Clone Repository
 ```bash
 # Create application directory
 sudo mkdir -p /opt/fiber-duct-planner
@@ -144,13 +145,14 @@ sudo chown $USER:$USER /opt/fiber-duct-planner
 git clone https://github.com/yourusername/fiber-duct-planner.git /opt/fiber-duct-planner
 cd /opt/fiber-duct-planner
 ```
-3.2 Backend Setup
+Backend Setup
 ```bash
 # Create and activate virtual environment
 cd /opt/fiber-duct-planner/backend
 python3.11 -m venv venv
 source venv/bin/activate
-
+````
+```bash
 # Alternative requirements.txt with specific versions:
 cat > requirements.txt << EOF
 Flask==3.0.0
@@ -169,10 +171,12 @@ pytest==7.4.3
 black==23.12.1
 flake8==6.1.0
 EOF
-
+```bash
 # Install Python packages
 pip install --upgrade pip
 pip install -r requirements.txt
+````
+```bash
 
 # Create environment file
 cat > .env << EOF
@@ -182,16 +186,20 @@ DATABASE_URL=postgresql://fiber_user:secure_password@localhost/fiber_planning
 SECRET_KEY=$(openssl rand -hex 32)
 CORS_ORIGINS=http://localhost:3000,http://localhost
 EOF
-
+````
+```bash
 # Initialize database
 flask db init
 flask db migrate -m "Initial migration"
 flask db upgrade
-3.3 Frontend Setup
-bashCopy# Install frontend dependencies
+````
+### Frontend Setup
+```bash
+# Install frontend dependencies
 cd /opt/fiber-duct-planner/frontend
 npm install
-
+````
+```bash
 # Package.json with specific versions:
 cat > package.json << EOF
 {
@@ -246,15 +254,18 @@ cat > package.json << EOF
   }
 }
 EOF
-
+````
+```bash
 # Create environment file
 cat > .env << EOF
 REACT_APP_API_URL=http://localhost:5000
 REACT_APP_MAP_STYLE=https://tile.openstreetmap.org/{z}/{x}/{y}.png
 EOF
-4. Service Configuration
-4.1 Create Systemd Service for Backend
-bashCopysudo tee /etc/systemd/system/fiber-planner-backend.service << EOF
+````
+### Service Configuration
+Create Systemd Service for Backend
+```bash
+sudo tee /etc/systemd/system/fiber-planner-backend.service << EOF
 [Unit]
 Description=Fiber Duct Planner Backend
 After=network.target postgresql.service
@@ -271,12 +282,15 @@ Restart=always
 [Install]
 WantedBy=multi-user.target
 EOF
-
+````
+```bash
 sudo systemctl daemon-reload
 sudo systemctl start fiber-planner-backend
 sudo systemctl enable fiber-planner-backend
-4.2 Configure Nginx
-bashCopysudo tee /etc/nginx/sites-available/fiber-planner << EOF
+````
+### Configure Nginx
+```bash
+sudo tee /etc/nginx/sites-available/fiber-planner << EOF
 server {
     listen 80;
     server_name localhost;
@@ -299,53 +313,74 @@ server {
     }
 }
 EOF
-
+````
+```bash
 sudo ln -s /etc/nginx/sites-available/fiber-planner /etc/nginx/sites-enabled/
 sudo rm /etc/nginx/sites-enabled/default  # Remove default site
 sudo nginx -t  # Test configuration
 sudo systemctl restart nginx
-5. Build and Deploy
-5.1 Build Frontend
-bashCopycd /opt/fiber-duct-planner/frontend
+````
+
+### Build and Deploy
+Build Frontend
+```bash
+cd /opt/fiber-duct-planner/frontend
 npm run build
-5.2 Initialize Database with Sample Data
-bashCopycd /opt/fiber-duct-planner/backend
+````
+Initialize Database with Sample Data
+```bash
+cd /opt/fiber-duct-planner/backend
 source venv/bin/activate
 python init_db.py  # Create this script with initial data
-5.3 Final Steps
-bashCopy# Set proper permissions
+````
+Final Steps
+```bash
+# Set proper permissions
 sudo chown -R $USER:$USER /opt/fiber-duct-planner
 sudo chmod -R 755 /opt/fiber-duct-planner
-
+````
+```bash
 # Restart services
 sudo systemctl restart fiber-planner-backend
 sudo systemctl restart nginx
-6. Verification and Testing
-6.1 Check Services Status
-bashCopysudo systemctl status postgresql
+````
+### Verification and Testing
+Check Services Status
+```bash
+sudo systemctl status postgresql
 sudo systemctl status fiber-planner-backend
 sudo systemctl status nginx
-6.2 Test Database Connection
-bashCopypsql -h localhost -U fiber_user -d fiber_planning
+```
+Test Database Connection
+```bash
+psql -h localhost -U fiber_user -d fiber_planning
 # Enter password when prompted
-6.3 Test API
-bashCopycurl http://localhost:5000/api/health
+````
+Test API
+```bash
+curl http://localhost:5000/api/health
 curl http://localhost:5000/api/duct-types
-6.4 Test Frontend
+````
+Test Frontend
 Open http://localhost in your web browser
-7. Development Environment Setup
-7.1 Backend Development
-bashCopycd /opt/fiber-duct-planner/backend
+### Development Environment Setup
+Backend Development
+```bash
+cd /opt/fiber-duct-planner/backend
 source venv/bin/activate
 export FLASK_ENV=development
 export FLASK_DEBUG=1
 flask run
-7.2 Frontend Development
-bashCopycd /opt/fiber-duct-planner/frontend
+```
+Frontend Development
+```bash
+cd /opt/fiber-duct-planner/frontend
 npm start
-8. Maintenance
-8.1 Database Backup
-bashCopy# Create backup script
+````
+### Maintenance
+Database Backup
+```bash
+# Create backup script
 cat > /opt/fiber-duct-planner/backup.sh << EOF
 #!/bin/bash
 BACKUP_DIR="/opt/fiber-duct-planner/backups"
@@ -355,8 +390,10 @@ pg_dump -U fiber_user -h localhost fiber_planning > \$BACKUP_DIR/backup_\$TIMEST
 EOF
 
 chmod +x /opt/fiber-duct-planner/backup.sh
-8.2 Log Rotation
-bashCopysudo tee /etc/logrotate.d/fiber-planner << EOF
+```
+Log Rotation
+```bash
+sudo tee /etc/logrotate.d/fiber-planner << EOF
 /opt/fiber-duct-planner/logs/*.log {
     daily
     missingok
@@ -367,8 +404,10 @@ bashCopysudo tee /etc/logrotate.d/fiber-planner << EOF
     create 0640 $USER $USER
 }
 EOF
-8.3 Update Script
-bashCopycat > /opt/fiber-duct-planner/update.sh << EOF
+````
+Update Script
+```bash
+cat > /opt/fiber-duct-planner/update.sh << EOF
 #!/bin/bash
 cd /opt/fiber-duct-planner
 git pull
@@ -384,11 +423,13 @@ sudo systemctl restart nginx
 EOF
 
 chmod +x /opt/fiber-duct-planner/update.sh
-9. Troubleshooting
-9.1 Check Logs
-bashCopy# Backend logs
+````
+### Troubleshooting
+Check Logs
+```bash
+# Backend logs
 sudo journalctl -u fiber-planner-backend
-
+````
 # Nginx logs
 sudo tail -f /var/log/nginx/error.log
 sudo tail -f /var/log/nginx/access.log
