@@ -41,14 +41,14 @@ http://localhost
 - 20GB free disk space
 - Internet connection
 
-## 1. System Preparation
+## System Preparation
 
-### 1.1 Update System
+### 1 Update System
 ```bash
 sudo apt update
 sudo apt upgrade -y
 ````
-1.2 Install System Dependencies
+2 Install System Dependencies
 ```bash
 sudo apt install -y \
     build-essential \
@@ -67,7 +67,7 @@ sudo apt install -y \
     curl \
     software-properties-common
 ```
-1.3 Install Node.js (v20.x LTS)
+3 Install Node.js (v20.x LTS)
 ```bash
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
 sudo apt install -y nodejs
@@ -75,7 +75,7 @@ sudo apt install -y nodejs
 node --version  # Should show v20.x.x
 npm --version   # Should show 10.x.x
 ````
-1.4 Install Docker and Docker Compose
+4 Install Docker and Docker Compose
 ```bash
 # Install Docker
 curl -fsSL https://get.docker.com -o get-docker.sh
