@@ -96,7 +96,7 @@ To add custom duct types:
     "description": "Custom duct configuration"
 }
 ````
-### Usage
+## Usage
 1. Planning a New Duct:
 - Click "New Duct" on the map interface
 - Draw the duct path
@@ -113,7 +113,7 @@ To add custom duct types:
 - Track capacity usage
 - Document installation dates
 
-### API Documentation
+## API Documentation
 The API documentation is available at http://localhost:5000/api/docs
 Key Endpoints:
 - GET /api/ducts - List all ducts
@@ -123,7 +123,7 @@ Key Endpoints:
 - GET /api/cables - List installed cables
 - POST /api/ducts/:id/cables - Install cable in duct
 
-### Development
+## Development
 1. Setup Development Environment:
 ```bash
 # Backend
@@ -146,21 +146,21 @@ pytest
 # Frontend tests
 npm test
 ```
-### Contributing
+## Contributing
 1. Fork the repository
 2. Create a feature branch
 3. Commit your changes
 4. Push to the branch
 5. Create a Pull Request
 
-### Security Considerations
+## Security Considerations
 Change default passwords
 Configure proper firewall rules
 Use HTTPS in production
 Implement proper authentication
 Regular security updates
 
-### Troubleshooting
+## Troubleshooting
 ### Common Issues
 
 1. Database Connection Issues:
@@ -176,7 +176,7 @@ Regular security updates
 - Verify port availability
 - Check Docker logs
 
-### License
+## License
 This project is licensed under the MIT License - see the LICENSE file for details.
 ###Support
 For support, please:
