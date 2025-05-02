@@ -32,16 +32,16 @@ Access the application at:
 ```bash
 http://localhost
 ```
-# Detailed Manual Installation Guide for Fiber Duct Planner
+## Detailed Manual Installation Guide for Fiber Duct Planner
 
-## System Requirements (2024)
+### System Requirements (2024)
 
 - Ubuntu 22.04 LTS or newer
 - Minimum 4GB RAM (8GB recommended)
 - 20GB free disk space
 - Internet connection
 
-## System Preparation
+### System Preparation
 
 ### 1 Update System
 ```bash
