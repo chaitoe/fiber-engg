@@ -93,11 +93,11 @@ To add custom duct types:
 - Provide JSON data:
 ```bash
 {
-    "name": "Custom HDPE 50mm",
-    "diameter": 50.0,
+    "name": "Custom HDPE 40mm",
+    "diameter": 40.0,
     "material": "HDPE",
-    "max_cables": 6,
-    "color": "Black",
+    "max_cables": 4,
+    "color": "Blue",
     "cost_per_meter": 6.5,
     "description": "Custom duct configuration"
 }
