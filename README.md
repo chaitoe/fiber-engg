@@ -20,7 +20,7 @@ An open-source web-based tool for planning and managing fiber optic duct infrast
 ## Quick Installation
 Clone the repository:
 ```bash
-git clone https://github.com/yourusername/fiber-duct-planner.git
+git clone https://github.com/chaitoe/fiber-duct-planner.git
 cd fiber-duct-planner
 ````
 Run the installation script:
