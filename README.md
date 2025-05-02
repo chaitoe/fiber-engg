@@ -18,12 +18,12 @@ An open-source web-based tool for planning and managing fiber optic duct infrast
 - Internet connection for map tiles
 
 ## Quick Installation
-1. Clone the repository:
+Clone the repository:
 ```bash
 git clone https://github.com/yourusername/fiber-duct-planner.git
 cd fiber-duct-planner
 ````
-2. Run the installation script:
+Run the installation script:
 ```bash
 sudo chmod +x install.sh
 sudo ./install.sh
@@ -97,17 +97,17 @@ To add custom duct types:
 }
 ````
 ## Usage
-1. Planning a New Duct:
+1### Planning a New Duct:
 - Click "New Duct" on the map interface
 - Draw the duct path
 - Configure duct properties
 - Save the configuration
-2. Managing Ducts:
+### Managing Ducts:
 - View existing ducts on the map
 - Click on ducts to view details
 - Edit properties as needed
 - Track capacity and usage
-3. Installing Cables:
+### Installing Cables:
 - Select a duct
 - Add cable installation details
 - Track capacity usage
@@ -124,7 +124,7 @@ Key Endpoints:
 - POST /api/ducts/:id/cables - Install cable in duct
 
 ## Development
-1. Setup Development Environment:
+Setup Development Environment:
 ```bash
 # Backend
 cd backend
@@ -138,7 +138,7 @@ cd frontend
 npm install
 npm start
 ````
-2. Running Tests:
+Running Tests:
 ```bash
 # Backend tests
 pytest
@@ -147,11 +147,11 @@ pytest
 npm test
 ```
 ## Contributing
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
+- Fork the repository
+- Create a feature branch
+- Commit your changes
+- Push to the branch
+- Create a Pull Request
 
 ## Security Considerations
 Change default passwords
@@ -163,15 +163,15 @@ Regular security updates
 ## Troubleshooting
 ### Common Issues
 
-1. Database Connection Issues:
+### Database Connection Issues:
 - Check PostgreSQL service status
 - Verify database credentials
 - Ensure PostGIS extension is installed
-2. Map Display Issues:
+### Map Display Issues:
 - Check internet connection
 - Verify API keys if using premium map services
 - Clear browser cache
-3. Docker Issues:
+### Docker Issues:
 - Check Docker service status
 - Verify port availability
 - Check Docker logs
@@ -180,15 +180,15 @@ Regular security updates
 This project is licensed under the MIT License - see the LICENSE file for details.
 ###Support
 For support, please:
-1. Check the documentation
-2. Search existing issues
-3. Create a new issue if needed
+### Check the documentation
+### Search existing issues
+### Create a new issue if needed
 ###Acknowledgments
 - OpenStreetMap for map data
 - PostGIS team for GIS support
 - Open source community
 
-  To use these files:
+### To use these files:
 
 1. Save the `install.sh` script in your project root directory
 2. Save the `README.md` in your project root directory
