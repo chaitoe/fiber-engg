@@ -48,7 +48,7 @@ Update System
 sudo apt update
 sudo apt upgrade -y
 ````
-2 Install System Dependencies
+Install System Dependencies
 ```bash
 sudo apt install -y \
     build-essential \
@@ -67,7 +67,7 @@ sudo apt install -y \
     curl \
     software-properties-common
 ```
-3 Install Node.js (v20.x LTS)
+Install Node.js (v20.x LTS)
 ```bash
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
 sudo apt install -y nodejs
@@ -75,7 +75,7 @@ sudo apt install -y nodejs
 node --version  # Should show v20.x.x
 npm --version   # Should show 10.x.x
 ````
-4 Install Docker and Docker Compose
+Install Docker and Docker Compose
 ```bash
 # Install Docker
 curl -fsSL https://get.docker.com -o get-docker.sh
@@ -96,7 +96,7 @@ docker-compose --version
 sudo systemctl start docker
 sudo systemctl enable docker
 ````
-2. Database Setup
+### Database Setup
 
 2.1 Configure PostgreSQL
 ```bash
