@@ -43,7 +43,7 @@ http://localhost
 
 ### System Preparation
 
-#### Update System
+Update System
 ```bash
 sudo apt update
 sudo apt upgrade -y
