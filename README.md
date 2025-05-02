@@ -424,21 +424,21 @@ EOF
 
 chmod +x /opt/fiber-duct-planner/update.sh
 ````
-### Troubleshooting
+## Troubleshooting
 Check Logs
 ```bash
 # Backend logs
 sudo journalctl -u fiber-planner-backend
 ````
-# Nginx logs
+###Nginx logs
 sudo tail -f /var/log/nginx/error.log
 sudo tail -f /var/log/nginx/access.log
 
-# PostgreSQL logs
+### PostgreSQL logs
 ```bash
 sudo tail -f /var/log/postgresql/postgresql-14-main.log
 ````
-Common Issues
+### Common Issues
 Database Connection Issues
 ```bash
 # Check PostgreSQL status
