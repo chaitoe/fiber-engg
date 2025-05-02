@@ -196,7 +196,7 @@ For support, please:
 ```bash
 chmod +x install.sh
 ````
-The installation script will:
+### The installation script will:
 
 Install all required dependencies
 Set up the PostgreSQL database
@@ -206,7 +206,7 @@ Load initial data
 
 The README provides comprehensive documentation for:
 
-Installation instructions
+### Installation instructions
 - Configuration options
 - Usage guidelines
 - API documentation
