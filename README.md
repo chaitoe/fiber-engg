@@ -97,6 +97,7 @@ sudo systemctl start docker
 sudo systemctl enable docker
 ````
 2. Database Setup
+
 2.1 Configure PostgreSQL
 ```bash
 # Start PostgreSQL service
