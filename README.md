@@ -85,7 +85,7 @@ SECRET_KEY=your-secret-key
 ```bash
 REACT_APP_API_URL=http://localhost:5000
 ````
-6. Duct Types Configuration
+Duct Types Configuration
 Default duct types are installed automatically.
 
 To add custom duct types:
