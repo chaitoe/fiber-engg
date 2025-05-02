@@ -3,7 +3,6 @@
 An open-source web-based tool for planning and managing fiber optic duct infrastructure. This application provides comprehensive features for designing, documenting, and managing fiber duct networks.
 
 ## Features
-
 - Interactive map-based duct planning
 - Comprehensive duct and cable configuration management
 - Capacity planning and monitoring
@@ -13,14 +12,12 @@ An open-source web-based tool for planning and managing fiber optic duct infrast
 - Multi-user support
 
 ## System Requirements
-
 - Linux-based operating system (Ubuntu 20.04 LTS recommended)
 - Minimum 4GB RAM
 - 20GB free disk space
 - Internet connection for map tiles
 
 ## Quick Installation
-
 1. Clone the repository:
 ```bash
 git clone https://github.com/yourusername/fiber-duct-planner.git
@@ -38,14 +35,12 @@ http://localhost
 
 ## Manual Installation
 Prerequisites
-
 - Python 3.9+
 - Node.js 14+
 - PostgreSQL 13+ with PostGIS
  -Docker and Docker Compose
 
 Step-by-Step Installation
-
 1. Set up the database:
 ```bash
 sudo -u postgres psql
@@ -87,7 +82,6 @@ REACT_APP_API_URL=http://localhost:5000
 ````
 ### Duct Types Configuration
 Default duct types are installed automatically.
-
 To add custom duct types:
 - Access the API endpoint: POST /api/duct-types
 - Provide JSON data:
@@ -153,14 +147,13 @@ pytest
 npm test
 ```
 ### Contributing
-
 1. Fork the repository
 2. Create a feature branch
 3. Commit your changes
 4. Push to the branch
 5. Create a Pull Request
-### Security Considerations
 
+### Security Considerations
 Change default passwords
 Configure proper firewall rules
 Use HTTPS in production
