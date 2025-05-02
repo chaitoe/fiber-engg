@@ -46,7 +46,7 @@ Prerequisites
 
 Step-by-Step Installation
 
-Set up the database:
+1. Set up the database:
 
 
 
